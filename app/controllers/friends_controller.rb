@@ -5,7 +5,6 @@ class FriendsController < ApplicationController
   def index
     @friends = Friend.all
 
-
     respond_to do |format|
       format.html
         format.pdf do
@@ -21,7 +20,6 @@ class FriendsController < ApplicationController
           send_data(png, disposition: 'inline', filename: customFilename, 
                           type: 'application/png', format: 'A4')
         end
-
     end
 
   end
