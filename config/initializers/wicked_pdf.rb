@@ -33,10 +33,10 @@
 
 # fonctionne en prod : 
 
-WickedPdf.config ||= {}
-WickedPdf.config.merge!({
-  layout: "pdf.html.erb",
-}) 
+#WickedPdf.config ||= {}
+#WickedPdf.config.merge!({
+#  layout: "pdf.html.erb",
+#}) 
 
 
 # focntionne en dev :

@@ -5,14 +5,23 @@ class FriendsController < ApplicationController
   def index
     @friends = Friend.all
 
-    
-
 
     respond_to do |format|
       format.html
-      format.pdf do
-        render pdf: "friends", template: "friends/index", formats: [:html], layout: "pdf"
-      end
+        format.pdf do
+          pdf = Grover.new(url_for()).to_pdf
+          customFilename = "friends" ".pdf"
+          send_data(pdf, disposition: 'inline', filename: customFilename, 
+                          type: 'application/pdf', format: 'A4')
+        end
+
+        format.png do
+          png = Grover.new(url_for()).to_png
+          customFilename = "friends" ".png"
+          send_data(png, disposition: 'inline', filename: customFilename, 
+                          type: 'application/png', format: 'A4')
+        end
+
     end
 
   end
