@@ -5,12 +5,16 @@ class FriendsController < ApplicationController
   def index
     @friends = Friend.all
 
+    
+
+
     respond_to do |format|
       format.html
       format.pdf do
-       render pdf: "friends", template: "friends/index", formats: [:html], layout: "pdf"
+        render pdf: "friends", template: "friends/index", formats: [:html], layout: "pdf"
       end
     end
+
   end
 
   # GET /friends/1 or /friends/1.json
