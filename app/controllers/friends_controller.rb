@@ -7,18 +7,24 @@ class FriendsController < ApplicationController
 
     respond_to do |format|
       format.html
-        format.pdf do
-          pdf = Grover.new(url_for()).to_pdf
-          customFilename = "friends" ".pdf"
-          send_data(pdf, disposition: 'inline', filename: customFilename, 
-                          type: 'application/pdf', format: 'A4')
-        end
+       # format.pdf do
+       #   pdf = Grover.new(url_for()).to_pdf
+       #   customFilename = "friends" ".pdf"
+       #   send_data(pdf, disposition: 'inline', filename: customFilename, 
+       #                   type: 'application/pdf', format: 'A4')
+       # end
 
         format.png do
-          png = Grover.new(url_for()).to_png
-          customFilename = "friends" ".png"
-          send_data(png, disposition: 'inline', filename: customFilename, 
-                          type: 'application/png', format: 'A4')
+           png = Grover.new('http://localhost:3000/friends').to_png
+         # png = Grover.new(url_for(only_path: false)).to_png
+        
+          send_data(png, disposition: 'inline', filename: "filename.png", type: 'application/png')
+
+       
+          #   png = Grover.new(url_for()).to_png
+       #   customFilename = "friends" ".png"
+       #   send_data(png, disposition: 'inline', filename: customFilename, 
+       #                   type: 'application/png', format: 'A4')
         end
     end
 

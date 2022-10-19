@@ -18,5 +18,9 @@ module A1soir2
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    require 'grover'
+    config.middleware.use Grover::Middleware
+
   end
 end
