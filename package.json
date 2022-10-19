@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "puppeteer": "19.0.0"
+    "puppeteer": "^19.0.0"
   },
   "name": "a1soir2",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
