@@ -20,7 +20,6 @@ class FriendsController < ApplicationController
         
           send_data(png, disposition: 'inline', filename: "filename.png", type: 'application/png')
 
-       
           #   png = Grover.new(url_for()).to_png
        #   customFilename = "friends" ".png"
        #   send_data(png, disposition: 'inline', filename: customFilename, 
