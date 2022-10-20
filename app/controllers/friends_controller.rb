@@ -12,7 +12,7 @@ class FriendsController < ApplicationController
           customFilename = "friends" ".pdf"
           send_data(pdf, disposition: 'inline', filename: customFilename, 
                           type: 'application/pdf', format: 'A4')
-       # end
+        end
 
         format.png do
          #  png = Grover.new('http://localhost:3000/friends').to_png
